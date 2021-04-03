@@ -1,0 +1,20 @@
+{
+  "name": "game_of_life",
+  "version": "1.0.0",
+  "description": "Game of Life",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "watchify /Users/jeffry.tandiono/Documents/Jete/game_of_life/public/scripts/bundle.js",
+    "webpack": "npx webpack --config webpack.config.js"
+  },
+  "author": "jeffry.tandiono@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.5.0"
+  }
+}
