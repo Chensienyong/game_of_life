@@ -9,6 +9,7 @@ function Board(height, width) {
   this.mouseDown = false;
   this.pressedNodeState = false;
   this.speed = "fast";
+  this.run = false;
 }
 
 Board.prototype.init = function() {
@@ -89,6 +90,7 @@ Board.prototype.updateStateFromNewState = function() {
 
 function startGeneration(board) {
   function generation(num) {
+    if(!board.run) return;
     let speed = board.speed === "fast" ?
       0 : board.speed === "average" ?
         50 : 150;
@@ -178,7 +180,24 @@ Board.prototype.toggleButtons = function() {
   }
 
   document.getElementById("startButton").onclick = () => {
-    startGeneration(this);
+    if (this.run) {
+      this.run = false;
+      this.buttonsOn = true;
+
+      document.getElementById("randomizeButton").removeAttribute("disabled", "");
+      document.getElementById("clearButton").removeAttribute("disabled", "");
+      document.getElementById("startButton").innerHTML = "Start";
+
+    } else {
+      this.run = true;
+      this.buttonsOn = false;
+
+      document.getElementById("randomizeButton").setAttribute("disabled", "");
+      document.getElementById("clearButton").setAttribute("disabled", "");
+      document.getElementById("startButton").innerHTML = "Stop";
+
+      startGeneration(this);
+    }
   }
 };
 
