@@ -6,7 +6,6 @@
   "scripts": {
     "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "watchify /Users/jeffry.tandiono/Documents/Jete/game_of_life/public/scripts/bundle.js",
     "webpack": "npx webpack --config webpack.config.js"
   },
   "author": "jeffry.tandiono@gmail.com",
