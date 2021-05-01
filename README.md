@@ -10,5 +10,5 @@ npm run webpack
 ```
 Run the server
 ```sh
-npm run server
+npm run start
 ```
